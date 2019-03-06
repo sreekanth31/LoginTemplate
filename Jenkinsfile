@@ -1,9 +1,32 @@
-node{
-   stage('SCM Checkout'){
-      git 'https://github.com/sreekanth31/LoginTemplate.git'
-	}
-	stage('Compile-package'){
-	   def mvnHome = tool name: 'maven', type: 'maven'
-	   sh "${mvnHome}/bin/mvn clean package"
-	}
+pipeline {
+    agent any
+
+    stages {
+        stage ('Compile Stage') {
+
+            steps {
+                withMaven(maven : '') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+        stage ('Testing Stage') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn test'
+                }
+            }
+        }
+
+
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn deploy'
+                }
+            }
+        }
+    }
 }
