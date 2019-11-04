@@ -17,17 +17,5 @@
   </dependencies>
   <build>
     <finalName>LoginTemplate</finalName>
-  <plugins>
-    <plugin>
-  <groupId>org.apache.tomcat.maven</groupId>
-  <artifactId>tomcat7-maven-plugin</artifactId>
-  <version>2.0</version>
-  <configuration>
-    <server>deployment-server</server>
-    <url>http://localhost:8080/manager/text</url>
-    <path>/LoginTemplate</path>
-  </configuration>
-</plugin>
-    </plugins>
   </build>
 </project>
