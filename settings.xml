@@ -1,5 +1,9 @@
-<server>
+<settings>
+<servers>
+    <server>
       <id>releases</id>
       <username>admin</username>
       <password>admin123</password>
-</server>
+    </server>
+</servers>
+</settings>
