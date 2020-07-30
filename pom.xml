@@ -21,7 +21,7 @@
 	<distributionManagement>
         <repository>
             <id>releases</id>
-            <url>http://lcoalhost:8081/nexus/content/repositories/releases/</url>
+            <url>http://localhost:8081/nexus/content/repositories/releases/</url>
         </repository>
     	</distributionManagement> 
 
